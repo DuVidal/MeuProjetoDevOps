@@ -37,4 +37,5 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           sleep 5
-          dcurl -s http://localhost:8081 | grep "Atualizado via pipeline"
+          docker ps
+          curl -s http://localhost:8081 | grep "Atualizado via pipeline"
